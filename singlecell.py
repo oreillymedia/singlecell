@@ -127,8 +127,8 @@ def main():
     logging.basicConfig(level=logging.INFO)
     app = WebApp(kernel_manager)
     server = httpserver.HTTPServer(app)
-    server.listen(8000, '127.0.0.1')
-    app_log.info("Serving at http://127.0.0.1:8000")
+    server.listen(8000, '0.0.0.0')
+    app_log.info("Serving at http://0.0.0.0:8000")
     try:
         ioloop.IOLoop.instance().start()
     except KeyboardInterrupt:
